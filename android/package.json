@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "react-native-clean-form": "git+ssh://git@github.com:keijohyttinen/react-native-clean-form.git"
+  }
+}

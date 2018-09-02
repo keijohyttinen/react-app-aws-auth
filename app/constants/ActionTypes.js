@@ -1,0 +1,4 @@
+export const NAVIGATE_TO = 'NAVIGATE_TO';
+export const NAVIGATE_BACK = 'NAVIGATE_BACK';
+export const CHANGE_TAB = 'CHANGE_TAB'
+export const RESET_ERROR_MESSAGE = 'RESET_ERROR_MESSAGE'

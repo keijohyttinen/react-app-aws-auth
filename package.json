@@ -1,0 +1,69 @@
+{
+  "name": "HeyPlay",
+  "version": "0.0.1",
+  "author": "Keijo Hyttinen",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "android-pkg": "npm run-script bundle-android && npm run-script build-android && npm run-script android-deploy",
+    "android-deploy": "cd android/ && fastlane deploydev",
+    "build-android": "(cd android/ && gradle assembleDebug)",
+    "bundle-android": "react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --sourcemap-output android/app/src/main/assets/index.android.map --assets-dest android/app/src/main/res/",
+    "clean-android": "(cd android/ && gradle clean)",
+    "release-android": "(cd android && ./gradle clean && ./gradle assembleRelease)"
+  },
+  "dependencies": {
+    "@shoutem/animation": "^0.11.0",
+    "@shoutem/theme": "^0.10.0",
+    "@shoutem/ui": "^0.21.3",
+    "aws-sdk": "^2.100.0",
+    "aws4-react-native": "^0.0.2",
+    "axios": "^0.16.2",
+    "bluebird": "^3.5.0",
+    "react": "15.4.1",
+    "react-native": "0.42.2",
+    "react-native-aws-cognito-js": "^0.0.6",
+    "react-native-clean-form": "git+ssh://git@github.com:keijohyttinen/react-native-clean-form.git",
+    "react-native-elements": "^0.13.0",
+    "react-native-fbsdk": "^0.6.1",
+    "react-native-hockeyapp": "^0.5.1",
+    "react-native-i18n": "^2.0.2",
+    "react-native-icon": "^0.2.10",
+    "react-native-spinkit": "^1.1.1",
+    "react-native-vector-icons": "^4.3.0",
+    "react-navigation": "^1.0.0-beta.11",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2",
+    "redux-form": "^7.0.3",
+    "redux-immutablejs": "^0.0.8",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.1.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.19",
+    "babel-jest": "^21.0.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react-native": "^3.0.2",
+    "jest": "^21.0.2",
+    "jest-react-native": "^18.0.0",
+    "jest-serializer-enzyme": "^1.0.0",
+    "react-addons-test-utils": "^15.6.0",
+    "react-dom": "^15.6.1",
+    "react-test-renderer": "^15.6.1",
+    "redux-mock-store": "^1.2.3"
+  },
+  "jest": {
+    "verbose": true,
+    "moduleDirectories": [
+      "node_modules",
+      "app"
+    ],
+    "preset": "react-native",
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-native|react-native|react-native-hockeyapp|react-icons|react-native-i18n|react-navigation|@shoutem/theme|@shoutem/animation|@shoutem/ui)"
+    ]
+  }
+}
